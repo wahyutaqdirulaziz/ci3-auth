@@ -1,0 +1,17 @@
+{
+	"description": "Sistem Informasi Manajemen Akreditas",
+	"name": "codeigniter/framework",
+	"type": "project",
+	"homepage": "https://fatek.simak.untad.ac.id",
+	"license": "SIMAK FATEK UNTAD",
+	"require": {
+		"php": ">=5.3.7"
+	},
+	"suggest": {
+		"paragonie/random_compat": "Provides better randomness in PHP 5.x"
+	},
+	"require-dev": {
+		"mikey179/vfsstream": "1.1.*",
+		"phpunit/phpunit": "4.* || 5.* || 7.*"
+	}
+}
