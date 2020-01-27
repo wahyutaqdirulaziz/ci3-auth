@@ -6,4 +6,10 @@
     background-size: cover;
   }
 
+.bg-register-image {
+    background: url("./../images/bg/auth-register.jpg");
+    background-position: center;
+    background-size: cover;
+  }
+
 /* .Background Image */

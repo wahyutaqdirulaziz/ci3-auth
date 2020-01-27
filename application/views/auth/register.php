@@ -1,10 +1,9 @@
-<body class="hold-transition login-page bg-login-image">
-
-    <!-- *Login Box -->
-    <div class="login-box">
+<body class="hold-transition register-page bg-register-image">
+    <div class="register-box">
 
         <!-- *Card Box -->
         <div class="card">
+
             <!-- *Card Header -->
             <div class="card-header">
                 <!-- *Brand Logo -->
@@ -16,34 +15,38 @@
             <!-- .Card Header -->
 
             <!-- *Card Body -->
-            <div class="card-body login-card-body">
-                <!-- *Tempat Pemberitahuan -->
+            <div class="card-body register-card-body">
+                <!-- *Notification Place -->
                 <p class="login-box-msg">
-                    <!-- <div class="alert alert-success alert-message">
-                        <h5><i class="icon fas fa-check"></i> Berhasil! </h5>
-                        Success alert preview. This alert is dismissable.
-                    </div> -->
-                </p>
-                <!-- .Tempat Pemberitahuan -->
 
-                <!-- *Form Penginputan Username/Email dan Pasword -->
+                </p>
+                <!-- .Notification Place -->
+
+                <!-- *Form Penginputan untuk mendaftarkan akun -->
                 <form action="#" method="POST">
+                    <div class="form-group">
+                        <input type="text" name="fullname" class="form-control" placeholder="Full name">
+                    </div>
                     <div class="form-group">
                         <input type="text" name="username" class="form-control" placeholder="Username">
                     </div>
                     <div class="form-group">
-                        <small class="form-text text-muted text-right"><a href="#">Lupa Katasandi?</a></small>
+                        <input type="email" name="email" class="form-control" placeholder="Email">
+                    </div>
+                    <div class="form-group">
                         <input type="password" name="password" class="form-control" placeholder="Password">
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary btn-block">Masuk</button>
+                        <input type="password" name="c_password" class="form-control" placeholder="Confirm Password">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block">Daftar</button>
                     </div>
                 </form>
-                <!-- .Form Penginputan Username/Email dan Pasword -->
+                <!-- .Form Penginputan untuk mendaftarkan akun -->
                 <div class="text-center">
-                    <h6>Belum memiliki akun? <a href="<?= base_url('auth/register'); ?>">Daftar!</a></h6>
+                    <h6>Sudah memiliki akun? <a href="<?= base_url('auth/login'); ?>">Masuk!</a></h6>
                 </div>
-
             </div>
             <!-- .Card Body -->
 
@@ -57,4 +60,3 @@
         </div>
         <!-- .Card Box -->
     </div>
-    <!-- .Login Box -->
