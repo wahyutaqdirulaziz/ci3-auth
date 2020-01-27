@@ -1,49 +1,60 @@
 <body class="hold-transition login-page bg-login-image">
+
+    <!-- *Login Box -->
     <div class="login-box">
 
-        <!-- *Brand Logo -->
-        <div class="login-logo">
-            <img src="<?= base_url('assets/images/brand/auth-brand.png') ?>" alt="SIMAK Logo">
-        </div>
-        <!-- .Brand Logo -->
-
+        <!-- *Card Box -->
         <div class="card">
+            <!-- *Card Header -->
+            <div class="card-header">
+                <!-- *Brand Logo -->
+                <div class="text-center">
+                    <img src="<?= base_url('assets/images/brand/auth-brand.png') ?>" alt="SIMAK Logo">
+                </div>
+                <!-- .Brand Logo -->
+            </div>
+            <!-- .Card Header -->
+
+            <!-- *Card Body -->
             <div class="card-body login-card-body">
                 <!-- *Tempat Pemberitahuan -->
                 <p class="login-box-msg">
-                    <div class="alert alert-success alert-message">
+                    <!-- <div class="alert alert-success alert-message">
                         <h5><i class="icon fas fa-check"></i> Berhasil! </h5>
                         Success alert preview. This alert is dismissable.
-                    </div>
+                    </div> -->
                 </p>
                 <!-- .Tempat Pemberitahuan -->
 
-                <form action="../../index3.html" method="post">
-                    <div class="input-group mb-3">
-                        <input type="email" class="form-control" placeholder="Email">
-                        <div class="input-group-append">
-                            <div class="input-group-text">
-                                <span class="fas fa-envelope"></span>
-                            </div>
-                        </div>
+                <!-- *Form Penginputan Username/Email dan Pasword -->
+                <form action="" method="post">
+                    <div class="form-group">
+                        <input type="text" name="username" class="form-control" placeholder="Username or Email">
                     </div>
-                    <div class="input-group mb-3">
-                        <input type="password" class="form-control" placeholder="Password">
-                        <div class="input-group-append">
-                            <div class="input-group-text">
-                                <span class="fas fa-lock"></span>
-                            </div>
-                        </div>
+                    <div class="form-group">
+                        <small class="form-text text-muted text-right"><a href="#">Lupa Katasandi?</a></small>
+                        <input type="password" name="password" class="form-control" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block">Masuk</button>
                     </div>
                 </form>
-                <p class="mb-1">
-                    <a href="forgot-password.html">I forgot my password</a>
-                </p>
-                <p class="mb-0">
-                    <a href="register.html" class="text-center">Register a new membership</a>
-                </p>
+                <!-- .Form Penginputan Username/Email dan Pasword -->
+                <div class="text-center">
+                    <h6>Belum memiliki akun? <a href="#">Daftar!</a></h6>
+                </div>
+
             </div>
-            <!-- /.login-card-body -->
+            <!-- .Card Body -->
+
+            <!-- *Card Footer -->
+            <div class="card-footer">
+                <div class="text-center">
+                    <h6>Copyright &copy; 2020 <strong>SIMAK</strong>. All rights reserved.</h6>
+                </div>
+            </div>
+            <!-- .Card Footer -->
         </div>
+        <!-- .Card Box -->
     </div>
-    <!-- /.login-box -->
+    <!-- .Login Box -->
