@@ -1,0 +1,85 @@
+/* Make By Rochmad Nurul Fahmi */
+
+/* *Fonta */
+
+@font-face
+{
+  font-family: Raleway-Black;
+  font-weight: 900;
+  src: url('../fonts/raleway/Raleway-Black.ttf'); 
+  
+}
+
+@font-face
+{
+  font-family: Raleway-Regular;
+  font-weight: 400;
+  src: url('../fonts/raleway/Raleway-Regular.ttf'); 
+  
+}
+
+@font-face
+{
+  font-family: Raleway-Medium;
+  font-weight: 500;
+  src: url('../fonts/raleway/Raleway-Medium.ttf'); 
+  
+}
+
+@font-face
+{
+  font-family: Merienda;
+  font-weight: 400;
+  src: url('../fonts/merienda/Merienda-Regular.ttf'); 
+  
+}
+
+@font-face
+{
+  font-family: Merienda-Bold;
+  font-weight: 700;
+  src: url('../fonts/merienda/Merienda-Bold.ttf'); 
+  
+}
+
+@font-face
+{
+  font-family: Patrick-Hand;
+  font-weight: 400;
+  src: url('../fonts/patrick_hand/PatrickHand-Regular.ttf'); 
+  
+}
+
+/* Fonta Inisialisasi */
+.fonta-raleway
+{
+  font-family: 'Raleway-Regular', sans-serif;
+}
+
+.fonta-raleway-black
+{
+  font-family: 'Raleway-Black', sans-serif;
+}
+
+.fonta-raleway-medium
+{
+  font-family: 'Raleway-Medium', sans-serif;
+}
+
+.fonta-raleway-medium
+{
+  font-family: 'Raleway-Medium', sans-serif;
+}
+
+.fonta-merienda{
+    font-family: 'Merienda', cursive;
+}
+
+.fonta-merienda-bold{
+    font-family: 'Merienda-Bold', cursive;
+}
+
+.fonta-patrick-hand{
+    font-family: 'Patrick-Hand', cursive;
+}
+/* .Fonta */

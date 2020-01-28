@@ -3,15 +3,17 @@
     <!-- *Login Box -->
     <div class="login-box">
 
+        <!-- *Brand Logo -->
+        <div class="login-logo">
+            <img src="<?= base_url('assets/images/brand/circle-simak.png') ?>" alt="SIMAK Logo">
+        </div>
+        <!-- .Brand Logo -->
+
         <!-- *Card Box -->
         <div class="card">
             <!-- *Card Header -->
-            <div class="card-header">
-                <!-- *Brand Logo -->
-                <div class="text-center">
-                    <img src="<?= base_url('assets/images/brand/auth-brand.png') ?>" alt="SIMAK Logo">
-                </div>
-                <!-- .Brand Logo -->
+            <div class="card-header bg-primary">
+                <h4 class="fonta-merienda-bold"><em class="fas fa-sign-in-alt mx-2"></em>MASUK</h4>
             </div>
             <!-- .Card Header -->
 
@@ -36,7 +38,7 @@
                         <input type="password" name="password" class="form-control" placeholder="Password">
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary btn-block">Masuk</button>
+                        <button type="submit" class="btn btn-primary btn-block fonta-raleway-medium">Masuk</button>
                     </div>
                 </form>
                 <!-- .Form Penginputan Username/Email dan Pasword -->

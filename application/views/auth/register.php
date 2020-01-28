@@ -1,16 +1,18 @@
 <body class="hold-transition register-page bg-register-image">
     <div class="register-box">
 
+        <!-- *Brand Logo -->
+        <div class="register-logo">
+            <img src="<?= base_url('assets/images/brand/circle-simak.png') ?>" alt="SIMAK Logo">
+        </div>
+        <!-- .Brand Logo -->
+
         <!-- *Card Box -->
         <div class="card">
 
             <!-- *Card Header -->
-            <div class="card-header">
-                <!-- *Brand Logo -->
-                <div class="text-center">
-                    <img src="<?= base_url('assets/images/brand/auth-brand.png') ?>" alt="SIMAK Logo">
-                </div>
-                <!-- .Brand Logo -->
+            <div class="card-header bg-primary">
+                <h4 class="fonta-merienda-bold"><em class="fas fa-user-plus mx-2"></em>Daftar</h4>
             </div>
             <!-- .Card Header -->
 
@@ -34,13 +36,17 @@
                         <input type="email" name="email" class="form-control" placeholder="Email">
                     </div>
                     <div class="form-group">
-                        <input type="password" name="password" class="form-control" placeholder="Password">
+                        <div class="row">
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                <input type="password" name="password" class="form-control" placeholder="Password">
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                <input type="password" name="c_password" class="form-control" placeholder="Confirm Password">
+                            </div>
+                        </div>
                     </div>
                     <div class="form-group">
-                        <input type="password" name="c_password" class="form-control" placeholder="Confirm Password">
-                    </div>
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-primary btn-block">Daftar</button>
+                        <button type="submit" class="btn btn-primary btn-block fonta-raleway-medium">Daftar</button>
                     </div>
                 </form>
                 <!-- .Form Penginputan untuk mendaftarkan akun -->
