@@ -12,7 +12,7 @@
 
             <!-- *Card Header -->
             <div class="card-header bg-primary">
-                <h4 class="fonta-merienda-bold"><em class="fas fa-user-plus mx-2"></em>Daftar</h4>
+                <h4 class="fonta-merienda-bold"><em class="fas fa-user-plus mx-2"></em>DAFTAR</h4>
             </div>
             <!-- .Card Header -->
 

@@ -1,4 +1,4 @@
-<body class="hold-transition login-page bg-login-image">
+<body class="hold-transition login-page bg-forgot-password-image">
 
     <!-- *Login Box -->
     <div class="login-box">
@@ -13,7 +13,7 @@
         <div class="card">
             <!-- *Card Header -->
             <div class="card-header bg-primary">
-                <h4 class="fonta-merienda-bold"><em class="fas fa-sign-in-alt mx-2"></em>MASUK</h4>
+                <h4 class="fonta-merienda-bold"><em class="fas fa-user-lock mx-2"></em>LUPA KATASANDI</h4>
             </div>
             <!-- .Card Header -->
 
@@ -28,20 +28,19 @@
                 </p>
                 <!-- .Tempat Pemberitahuan -->
 
-                <!-- *Form Penginputan Username/Email dan Pasword -->
+                <!-- *Form Penginputan Email-->
                 <form action="#" method="POST">
                     <div class="form-group">
-                        <input type="text" name="username" class="form-control" placeholder="Username">
+                        <input type="text" name="email" class="form-control" placeholder="Email">
                     </div>
                     <div class="form-group">
-                        <small class="form-text text-muted text-right"><a href="<?= base_url('auth/forgot_password'); ?>">Lupa Katasandi?</a></small>
-                        <input type="password" name="password" class="form-control" placeholder="Password">
-                    </div>
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-primary btn-block fonta-raleway-medium">Masuk</button>
+                        <button type="submit" class="btn btn-primary btn-block fonta-raleway-medium">Kirim Link Reset Katasandi</button>
                     </div>
                 </form>
                 <!-- .Form Penginputan Username/Email dan Pasword -->
+                <div class="text-center">
+                    <h6>Sudah mengingat Katasandi? <a href="<?= base_url('auth/login'); ?>">Masuk!</a></h6>
+                </div>
                 <div class="text-center">
                     <h6>Belum memiliki akun? <a href="<?= base_url('auth/register'); ?>">Daftar!</a></h6>
                 </div>

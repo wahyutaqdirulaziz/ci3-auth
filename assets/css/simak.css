@@ -11,5 +11,10 @@
     background-position: center;
     background-size: cover;
   }
+.bg-forgot-password-image {
+    background: url("./../images/bg/auth-forgot-password.jpg");
+    background-position: center;
+    background-size: cover;
+  }
 
 /* .Background Image */
