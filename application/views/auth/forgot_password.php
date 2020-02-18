@@ -29,20 +29,21 @@
                 <!-- .Tempat Pemberitahuan -->
 
                 <!-- *Form Penginputan Email-->
-                <form action="#" method="POST">
-                    <div class="form-group">
-                        <input type="text" name="email" class="form-control" placeholder="Email">
-                    </div>
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-primary btn-block fonta-raleway-medium">Kirim Link Reset Katasandi</button>
-                    </div>
-                </form>
+                <?= form_open('forgot_password/send'); ?>
+                <div class="form-group">
+                    <input type="text" name="email" class="form-control" placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-block fonta-raleway-medium">Kirim Tautan</button>
+                </div>
+                <?= form_close() ?>
+
                 <!-- .Form Penginputan Username/Email dan Pasword -->
                 <div class="text-center">
-                    <h6>Sudah mengingat Katasandi? <a href="<?= base_url('auth/login'); ?>">Masuk!</a></h6>
+                    <h6>Sudah mengingat Katasandi? <a href="<?= base_url('login'); ?>">Masuk!</a></h6>
                 </div>
                 <div class="text-center">
-                    <h6>Belum memiliki akun? <a href="<?= base_url('auth/register'); ?>">Daftar!</a></h6>
+                    <h6>Belum memiliki akun? <a href="<?= base_url('registration'); ?>">Daftar!</a></h6>
                 </div>
 
             </div>

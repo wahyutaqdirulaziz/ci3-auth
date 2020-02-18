@@ -1,5 +1,5 @@
 <body class="hold-transition register-page bg-register-image">
-    <div class="register-box">
+    <div class="col-lg-4 col-md-4 col-sm-12">
 
         <!-- *Brand Logo -->
         <div class="register-logo">
@@ -25,33 +25,30 @@
                 <!-- .Notification Place -->
 
                 <!-- *Form Penginputan untuk mendaftarkan akun -->
-                <form action="#" method="POST">
-                    <div class="form-group">
-                        <input type="text" name="fullname" class="form-control" placeholder="Full name">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="username" class="form-control" placeholder="Username">
-                    </div>
-                    <div class="form-group">
-                        <input type="email" name="email" class="form-control" placeholder="Email">
-                    </div>
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
-                                <input type="password" name="password" class="form-control" placeholder="Password">
-                            </div>
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
-                                <input type="password" name="c_password" class="form-control" placeholder="Confirm Password">
-                            </div>
+                <?= form_open('registration/create') ?>
+                <div class="form-group">
+                    <input type="text" name="username" class="form-control" placeholder="Username">
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" class="form-control" placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                            <input type="password" name="password" class="form-control" placeholder="Password">
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                            <input type="password" name="c_password" class="form-control" placeholder="Confirm Password">
                         </div>
                     </div>
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-primary btn-block fonta-raleway-medium">Daftar</button>
-                    </div>
-                </form>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-block fonta-raleway-medium">Daftar</button>
+                </div>
+                <?= form_close() ?>
                 <!-- .Form Penginputan untuk mendaftarkan akun -->
                 <div class="text-center">
-                    <h6>Sudah memiliki akun? <a href="<?= base_url('auth/login'); ?>">Masuk!</a></h6>
+                    <h6>Sudah memiliki akun? <a href="<?= base_url('login'); ?>">Masuk!</a></h6>
                 </div>
             </div>
             <!-- .Card Body -->
