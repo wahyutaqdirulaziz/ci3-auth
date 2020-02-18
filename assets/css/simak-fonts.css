@@ -50,6 +50,14 @@
   
 }
 
+@font-face
+{
+  font-family: Sriracha-Regular;
+  font-weight: 400;
+  src: url('../fonts/sriracha/Sriracha-Regular.ttf'); 
+  
+}
+
 /* Fonta Inisialisasi */
 .fonta-raleway
 {
@@ -59,11 +67,6 @@
 .fonta-raleway-black
 {
   font-family: 'Raleway-Black', sans-serif;
-}
-
-.fonta-raleway-medium
-{
-  font-family: 'Raleway-Medium', sans-serif;
 }
 
 .fonta-raleway-medium
@@ -81,5 +84,9 @@
 
 .fonta-patrick-hand{
     font-family: 'Patrick-Hand', cursive;
+}
+
+.fonta-sriracha{
+    font-family: 'Sriracha', cursive;
 }
 /* .Fonta */

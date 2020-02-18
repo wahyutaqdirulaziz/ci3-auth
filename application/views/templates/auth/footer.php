@@ -4,7 +4,9 @@
   <script src="<?= base_url('assets/') ?>plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
   <!-- AdminLTE App -->
   <script src="<?= base_url('assets/') ?>js/adminlte.min.js"></script>
+  <!-- Simak -->
+  <script src="<?= base_url('assets/') ?>js/simak.js"></script>
 
-</body>
+  </body>
 
-</html>
+  </html>

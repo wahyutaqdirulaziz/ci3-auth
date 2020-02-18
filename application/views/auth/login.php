@@ -20,12 +20,7 @@
             <!-- *Card Body -->
             <div class="card-body login-card-body">
                 <!-- *Tempat Pemberitahuan -->
-                <p class="login-box-msg">
-                    <!-- <div class="alert alert-success alert-message">
-                        <h5><i class="icon fas fa-check"></i> Berhasil! </h5>
-                        Success alert preview. This alert is dismissable.
-                    </div> -->
-                </p>
+                <?= $this->session->flashdata('message'); ?>
                 <!-- .Tempat Pemberitahuan -->
 
                 <!-- *Form Penginputan Username/Email dan Pasword -->
