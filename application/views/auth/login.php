@@ -1,5 +1,5 @@
 <body class="hold-transition login-page bg-login-image">
-
+    <div id="preloader"></div>
     <!-- *Login Box -->
     <div class="login-box">
 

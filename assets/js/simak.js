@@ -12,3 +12,6 @@ window.setTimeout(function () {
         $(this).remove();
     });
 }, 20000);
+
+const preloader = $("#preloader");
+preloader.delay(500).fadeOut();
