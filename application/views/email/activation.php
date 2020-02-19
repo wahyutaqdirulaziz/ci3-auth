@@ -158,8 +158,10 @@
                                                     </tr>
                                                 </tbody>
                                             </table>
-                                            <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">Tombol bermasalah? Silahkan salin dan tempel tautan berikut pada browser anda:</p>
-                                            <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;"><a href="<?= base_url() . 'registration/verify?email=' . $email . '&token=' . urlencode($token) ?>"><?= base_url() . 'registration/verify?email=' . $email . '&token=' . urlencode($token) ?></a></p>
+                                            <p style="font-family: sans-serif; font-size: 12px; font-weight: normal; margin: 0;">Tombol bermasalah? Silahkan salin dan tempel tautan berikut pada browser anda:</p>
+                                            <p style="color:#586069!important;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-size:12px!important;font-weight:normal;line-height:1.5;margin:0 0 15px;padding:0;text-align:left" align="left">
+                                                <a style="box-sizing:border-box;color:#0366d6;text-decoration:none;word-break:break-all" href="<?= base_url() . 'registration/verify?email=' . $email . '&token=' . urlencode($token) ?>" target="_blank"><?= base_url() . 'registration/verify?email=' . $email . '&token=' . urlencode($token) ?></a>
+                                            </p>
                                         </td>
                                     </tr>
                                 </table>
