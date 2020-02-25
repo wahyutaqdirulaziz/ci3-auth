@@ -1,6 +1,6 @@
 <body class="hold-transition register-page bg-register-image">
     <div id="preloader"></div>
-    <div class="col-lg-4 col-md-4 col-sm-12 mt-5">
+    <div class="col-lg-4 col-md-4 col-sm-12 pt-5">
 
         <!-- *Brand Logo -->
         <div class="register-logo mt-5">
@@ -28,11 +28,11 @@
                 <!-- *Form Penginputan untuk mendaftarkan akun -->
                 <?= form_open('registration/create') ?>
                 <div class="form-group">
-                    <input type="text" name="username" class="form-control" placeholder="Username" value="<?= set_value('username') ?>">
+                    <input type="text" name="username" class="form-control" placeholder="Username" value="<?= set_value('username') ?>" maxlength="28">
                     <?= form_error('username', '<small class="text-danger error_form">', '</small>') ?>
                 </div>
                 <div class="form-group">
-                    <input type="email" name="email" class="form-control" placeholder="Email" value="<?= set_value('email') ?>">
+                    <input type="email" name="email" class="form-control" placeholder="Email" value="<?= set_value('email') ?>" maxlength="50">
                     <?= form_error('email', '<small class="text-danger error_form">', '</small>') ?>
                 </div>
                 <div class="form-group">

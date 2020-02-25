@@ -9,7 +9,7 @@ class Registration extends CI_Controller
         parent::__construct();
         $this->load->helper(['form', 'string']);
         $this->load->library('form_validation');
-        $this->load->model('send_email');
+        $this->load->model('emailModel');
     }
 
     public function index($cap_indi = 1)
@@ -30,10 +30,11 @@ class Registration extends CI_Controller
         $this->form_validation->set_rules(
             'username',
             'Username',
-            'required|trim|is_unique[users.username]',
+            'required|trim|is_unique[users.username]|min_length[6]',
             [
                 'required' => '<i class="fas fa-exclamation-circle mx-1"></i> Username belum diisi',
                 'is_unique' => '<i class="fas fa-exclamation-circle mx-1"></i> Username telah digunakan',
+                'min_length' =>  '<i class="fas fa-exclamation-circle mx-1"></i> Username minimal 6 karakter',
             ]
         );
         $this->form_validation->set_rules(
@@ -66,7 +67,7 @@ class Registration extends CI_Controller
                 'required' => '<i class="fas fa-exclamation-circle mx-1"></i> Confirm Password belum diisi',
             ]
         );
-        // $this->store();
+
         $cap = ($this->input->post('cap_word') == $this->input->post('cap_confirm')) ? 1 : 0;
         if ($this->form_validation->run() == FALSE || $cap == 0) {
             $this->index($cap);
@@ -90,27 +91,12 @@ class Registration extends CI_Controller
         ];
 
         $this->db->insert('users', $data);
-
-        //generate token activation
-        $gen_token = base64_encode(random_bytes(32));
         $user_data = [
+            'username' => $data['username'],
             'email' => $data['email'],
-            'token' => $gen_token,
-            'created' => time(),
         ];
-        $this->db->insert('user_token', $user_data);
-        $user_data['username'] = $data['username'];
-        $this->send_email->send($user_data, 'verify');
-        $this->session->set_flashdata(
-            'message',
-            '<div class="alert alert-success" id="alert-msg">
-                <h5 class="fonta-raleway-medium"><i class="icon fas fa-check"></i> Berhasil!</h5>
-                <div class="text-justify">
-                Periksa email Anda untuk mengaktifkan akun.
-                </div>
-                </div>'
-        );
-        redirect('login');
+        $this->emailModel->send($user_data, 'verify');
+        redirect('handling/success');
     }
 
     //method untuk melakukan verifikasi email
@@ -124,7 +110,11 @@ class Registration extends CI_Controller
         if ($user) {
             $user_token = $this->db->get_where('user_token', ['token' => $token])->row_array();
 
+            //kondisi jika token user benar
             if ($user_token) {
+
+                //*Pengecekan masa kadaluarsa dari token
+                //jika token masih aktif
                 if ((time() - $user_token['created']) < 18000) {
                     $this->db->set('is_active', 1);
                     $this->db->where('email', $email);
@@ -143,21 +133,44 @@ class Registration extends CI_Controller
                     redirect('login');
                 }
 
-                //Token Expired
+                //Jika token sudah kadaluarsa
                 else {
-                    echo "token Expired";
-                    //Expired 
+                    $data = [
+                        'email' => $email,
+                        'banner' => 'expired-token.png',
+                        'cond' => 'expiredToken',
+                    ];
+                    $this->handling($data, "failed");
                 }
-            } else {
-                echo "Token Invalid";
-                die;
+            }
+            //Invalid Token
+            else {
+                $data = [
+                    'email' => $email,
+                    'banner' => 'invalid-token.png',
+                    'cond' => 'invalidToken',
+                ];
+                $this->handling($data, "failed");
             }
         }
 
         //Email Invalid
         else {
-            echo "Failed";
-            die;
+            $data = [
+                'email' => $email,
+                'banner' => 'invalid-email.png',
+                'cond' => 'invalidEmail',
+            ];
+            $this->handling($data, "failed");
+        }
+    }
+
+    private function handling($data, $type)
+    {
+        if ($type == 'failed') {
+            $data['title'] = "Verifikasi Akun &mdash; SIMAK";
+            $this->session->set_flashdata('handling', $data);
+            redirect('handling/failed');
         }
     }
 }

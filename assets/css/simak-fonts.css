@@ -58,7 +58,15 @@
   
 }
 
-/* Fonta Inisialisasi */
+@font-face
+{
+  font-family: Nunito-SemiBold;
+  font-weight: 600;
+  src: url('../fonts/nunito/Nunito-SemiBold.ttf'); 
+  
+}
+
+/* *Fonta Inisialisasi */
 .fonta-raleway
 {
   font-family: 'Raleway-Regular', sans-serif;
@@ -89,4 +97,8 @@
 .fonta-sriracha{
     font-family: 'Sriracha', cursive;
 }
-/* .Fonta */
+
+.fonta-nunito-semibold{
+    font-family: 'Nunito-SemiBold';
+}
+/* .Fonta Inisialisasi*/
