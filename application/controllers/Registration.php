@@ -108,49 +108,47 @@ class Registration extends CI_Controller
         $user = $this->db->get_where('users', ['email' => $email])->row_array();
 
         if ($user) {
-            $user_token = $this->db->get_where('user_token', ['token' => $token])->row_array();
+            if ($user['is_active'] == 1) {
+                $this->_message();
+                redirect('login');
+            } else {
+                $user_token = $this->db->get_where('user_token', ['token' => $token])->row_array();
 
-            //kondisi jika token user benar
-            if ($user_token) {
+                //kondisi jika token user benar
+                if ($user_token) {
 
-                //*Pengecekan masa kadaluarsa dari token
-                //jika token masih aktif
-                if ((time() - $user_token['created']) < 18000) {
-                    $this->db->set('is_active', 1);
-                    $this->db->where('email', $email);
-                    $this->db->update('users');
-                    $this->db->delete('user_token', ['email' => $email]);
+                    //*Pengecekan masa kadaluarsa dari token
+                    //jika token masih aktif
+                    if ((time() - $user_token['created']) < 18000) {
+                        $this->db->set('is_active', 1);
+                        $this->db->where('email', $email);
+                        $this->db->update('users');
+                        $this->db->delete('user_token', ['email' => $email]);
+                        $this->_message();
+                        redirect('login');
+                    }
 
-                    $this->session->set_flashdata(
-                        'message',
-                        '<div class="alert alert-success" id="alert-msg">
-                            <h5 class="fonta-raleway-medium"><i class="icon fas fa-check"></i> Berhasil!</h5>
-                            <div class="text-justify">
-                            Akun anda telah aktif.
-                            </div>
-                            </div>'
-                    );
-                    redirect('login');
+                    //Jika token sudah kadaluarsa
+                    else {
+                        $this->db->delete('user_token', ['email' => $email]);
+                        $this->db->delete('users', ['email' => $email]);
+                        $data = [
+                            'email' => $email,
+                            'banner' => 'expired-token.png',
+                            'cond' => 'expiredToken',
+                        ];
+                        $this->handling($data, "failed");
+                    }
                 }
-
-                //Jika token sudah kadaluarsa
+                //Invalid Token
                 else {
                     $data = [
                         'email' => $email,
-                        'banner' => 'expired-token.png',
-                        'cond' => 'expiredToken',
+                        'banner' => 'invalid-token.png',
+                        'cond' => 'invalidToken',
                     ];
                     $this->handling($data, "failed");
                 }
-            }
-            //Invalid Token
-            else {
-                $data = [
-                    'email' => $email,
-                    'banner' => 'invalid-token.png',
-                    'cond' => 'invalidToken',
-                ];
-                $this->handling($data, "failed");
             }
         }
 
@@ -172,5 +170,18 @@ class Registration extends CI_Controller
             $this->session->set_flashdata('handling', $data);
             redirect('handling/failed');
         }
+    }
+
+    private function _message()
+    {
+        $this->session->set_flashdata(
+            'message',
+            '<div class="alert alert-success" id="alert-msg">
+        <h5 class="fonta-raleway-medium"><i class="icon fas fa-check"></i> Berhasil!</h5>
+        <div class="text-justify">
+        Akun anda telah aktif.
+        </div>
+        </div>'
+        );
     }
 }

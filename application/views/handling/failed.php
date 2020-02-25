@@ -26,7 +26,9 @@
                         <?php elseif ($cond == "expiredToken") : ?>
                             <h3 class="fonta-patrick-hand text-center">
                                 <strong class="text-danger">Token</strong>
-                                telah melebihi batas waktu (kedaluarsa).
+                                telah kedaluarsa.
+                                <br>
+                                Silahkan <strong class="text-info"><a href="<?= base_url('registration'); ?>">daftar</a></strong> kembali akun Anda.
                             </h3>
                         <?php endif; ?>
                     </div>
