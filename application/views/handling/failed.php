@@ -16,7 +16,7 @@
                             <h3 class="fonta-patrick-hand text-center">
                                 Email
                                 <strong class="text-danger"><?= $email ?></strong>
-                                tidak valid atau belum terdaftar dalam.
+                                tidak valid atau belum terdaftar.
                             </h3>
                         <?php elseif ($cond == "invalidToken") : ?>
                             <h3 class="fonta-patrick-hand text-center">

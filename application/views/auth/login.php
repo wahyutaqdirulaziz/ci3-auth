@@ -24,18 +24,18 @@
                 <!-- .Tempat Pemberitahuan -->
 
                 <!-- *Form Penginputan Username/Email dan Pasword -->
-                <form action="#" method="POST">
-                    <div class="form-group">
-                        <input type="text" name="username" class="form-control" placeholder="Username">
-                    </div>
-                    <div class="form-group">
-                        <small class="form-text text-muted text-right"><a href="<?= base_url('forgot_password'); ?>">Lupa Katasandi?</a></small>
-                        <input type="password" name="password" class="form-control" placeholder="Password">
-                    </div>
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-primary btn-block fonta-raleway-medium">Masuk</button>
-                    </div>
-                </form>
+                <?= form_open('login/validation'); ?>
+                <div class="form-group">
+                    <input type="text" name="username" class="form-control" placeholder="Username or Email" required>
+                </div>
+                <div class="form-group">
+                    <small class="form-text text-muted text-right"><a href="<?= base_url('forgot_password'); ?>">Lupa Katasandi?</a></small>
+                    <input type="password" name="password" class="form-control" placeholder="Password" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-block fonta-raleway-medium">Masuk</button>
+                </div>
+                <?= form_close(); ?>
                 <!-- .Form Penginputan Username/Email dan Pasword -->
                 <div class="text-center">
                     <h6>Belum memiliki akun? <a href="<?= base_url('registration'); ?>">Daftar!</a></h6>
